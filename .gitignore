@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual Environment
+venv/
+env/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# Google Colab
+*.ipynb
+
+# Output
+output/
+
+# Checkpoints
+checkpoints/
+
+# Dataset
+data/images/
+data/*.jsonl
+
+# Hugging Face Cache
+.cache/
+huggingface/
+
+# Logs
+*.log
+
+# OS Files
+.DS_Store
+Thumbs.db

@@ -7,27 +7,29 @@
 
 # ChitraBhasha VQA Pipeline
 
-A Google Colab-based Vision Language Model (VLM) pipeline for generating multilingual Visual Question Answering (VQA) datasets using **Qwen2.5-VL**. The pipeline automatically processes image datasets and generates high-quality question-answer pairs in multiple language formats.
+A Google Colab-based Vision Language Model (VLM) pipeline for generating multilingual, code-switched, and transliteration-aware Visual Question Answering (VQA) datasets from images using **Qwen2.5-VL**.
+
+---
+
+## 📖 Overview
+
+ChitraBhasha automates VQA dataset generation for Indian languages. Given an image and its metadata, the pipeline generates three types of question-answer pairs, enabling researchers to train and evaluate Vision Language Models (VLMs) across India's linguistic diversity.
 
 ---
 
 ## 🚀 Features
 
-- Multilingual Visual Question Answering (VQA)
-- Code-Switched QA Generation
-- Transliteration-Aware QA Generation
-- Indic Language QA Generation
-- Automatic checkpointing and resume support
-- Batch image processing
-- JSONL input/output support
-- Google Drive integration
-- Google Colab compatible
+- **Code-Switched QA** — Questions and answers mixing English with an Indian language.
+- **Transliteration-Aware QA** — Romanized script while preserving native pronunciation.
+- **Indic Language QA** — Questions and answers entirely in a regional language using its native script.
+- Automatic checkpointing and resume-on-interruption.
+- Image ID-to-filename matching.
+- Batch-wise JSONL processing.
+- Google Colab and Google Drive compatible.
 
 ---
 
-## 📂 Dataset Format
-
-Input JSONL
+## 📂 Dataset Format (Input)
 
 ```json
 {
@@ -56,60 +58,27 @@ Input JSONL
 
 ---
 
-## 🤖 Model Used
+## 🤖 Model
 
 - Qwen2.5-VL-3B-Instruct
 - Qwen2.5-VL-7B-Instruct
 
 Framework:
 - Hugging Face Transformers
-- PyTorch
 
 ---
 
 ## ⚙️ Workflow
 
-1. Install required dependencies
-2. Mount Google Drive
-3. Load JSONL dataset
-4. Build ID-based image mapping
-5. Load Qwen2.5-VL model
-6. Process images batch-wise
-7. Generate multilingual QA pairs
-8. Save output automatically
-9. Resume processing from checkpoints if interrupted
-
----
-
-## 🛠 Technologies Used
-
-- Python
-- Google Colab
-- Hugging Face Transformers
-- PyTorch
-- Pillow
-- JSONL
-- Accelerate
-- Qwen-VL-Utils
-
----
-
-## 📁 Repository Structure
-
-```
-ChitraBhasha-VQA-Pipeline
-│
-├── main.py
-├── processor.py
-├── image_mapper.py
-├── qa_generator.py
-├── checkpoint_manager.py
-├── config.py
-├── requirements.txt
-├── README.md
-├── LICENSE
-└── .gitignore
-```
+1. Unzip image batch.
+2. Install dependencies.
+3. Load the JSONL dataset and build an ID lookup.
+4. Load the Qwen2.5-VL model.
+5. Match each image to its corresponding record.
+6. Run inference and generate QA pairs.
+7. Parse the structured output.
+8. Save results after every image (auto-resume).
+9. Download the final JSON output.
 
 ---
 
@@ -123,32 +92,32 @@ pip install -r requirements.txt
 
 ## ▶️ Usage
 
-Run the pipeline in Google Colab or Python.
-
 ```bash
-python main.py
+python main.py \
+  --input_jsonl data/sample.jsonl \
+  --image_folder data/images \
+  --output_jsonl output/output.jsonl
 ```
 
 ---
 
-## 📌 Applications
+## 🛠 Technologies
 
-- Vision Language Models (VLM)
-- Multilingual AI
-- Visual Question Answering
-- Indic Language Research
-- Dataset Generation
-- AI Research
+- Python
+- PyTorch
+- Hugging Face Transformers
+- Pillow
+- Google Colab
+- JSONL
+- Accelerate
+- Qwen-VL-Utils
 
 ---
 
 ## 👨‍💻 Author
 
-**Sanjeet Kumar**
-
-B.Tech – Computer Science & Engineering (AI & ML)
-
-Research Intern
+**Sanjeet Kumar**  
+B.Tech CSE (AI & ML) | Research Intern
 
 GitHub: https://github.com/sanjeetworld
 

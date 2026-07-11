@@ -5,7 +5,7 @@
 ![Status](https://img.shields.io/badge/Status-Active-success.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-# ChitraBhasha VQA Pipeline
+# Multilingual VQA Pipeline
 
 A Google Colab-based Vision Language Model (VLM) pipeline for generating multilingual, code-switched, and transliteration-aware Visual Question Answering (VQA) datasets from images using **Qwen2.5-VL**.
 
@@ -13,15 +13,15 @@ A Google Colab-based Vision Language Model (VLM) pipeline for generating multili
 
 ## 📖 Overview
 
-ChitraBhasha automates VQA dataset generation for Indian languages. Given an image and its metadata, the pipeline generates three types of question-answer pairs, enabling researchers to train and evaluate Vision Language Models (VLMs) across India's linguistic diversity.
+This pipeline automates multilingual Visual Question Answering (VQA) dataset generation. Given an image and its metadata, it generates three types of question-answer pairs to support training and evaluation of Vision Language Models (VLMs) across multiple languages.
 
 ---
 
 ## 🚀 Features
 
-- **Code-Switched QA** — Questions and answers mixing English with an Indian language.
+- **Code-Switched QA** — Questions and answers mixing English with another language.
 - **Transliteration-Aware QA** — Romanized script while preserving native pronunciation.
-- **Indic Language QA** — Questions and answers entirely in a regional language using its native script.
+- **Multilingual QA** — Questions and answers generated in native language scripts.
 - Automatic checkpointing and resume-on-interruption.
 - Image ID-to-filename matching.
 - Batch-wise JSONL processing.
@@ -33,7 +33,7 @@ ChitraBhasha automates VQA dataset generation for Indian languages. Given an ima
 
 ```json
 {
-  "id": "cul_0000017",
+  "id": "sample_0000017",
   "image_url": "https://example.com/image.png",
   "caption": "..."
 }
@@ -45,14 +45,14 @@ ChitraBhasha automates VQA dataset generation for Indian languages. Given an ima
 
 ```json
 {
-  "id": "cul_0000017",
+  "id": "sample_0000017",
   "code_switched_q": "...",
   "code_switched_a": "...",
   "transliteration_q": "...",
   "transliteration_a": "...",
-  "indic_language": "...",
-  "indic_q": "...",
-  "indic_a": "..."
+  "language": "...",
+  "multilingual_q": "...",
+  "multilingual_a": "..."
 }
 ```
 
@@ -63,7 +63,7 @@ ChitraBhasha automates VQA dataset generation for Indian languages. Given an ima
 - Qwen2.5-VL-3B-Instruct
 - Qwen2.5-VL-7B-Instruct
 
-Framework:
+**Framework**
 - Hugging Face Transformers
 
 ---
@@ -117,7 +117,6 @@ python main.py \
 ## 👨‍💻 Author
 
 **Sanjeet Kumar**  
-B.Tech CSE (AI & ML) | Research Intern
 
 GitHub: https://github.com/sanjeetworld
 

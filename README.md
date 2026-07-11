@@ -1,3 +1,8 @@
+![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.x-red.svg)
+![Transformers](https://img.shields.io/badge/HuggingFace-Transformers-yellow.svg)
+![Status](https://img.shields.io/badge/Status-Active-success.svg)
 # ChitraBhasha VQA Pipeline
 
 A scalable Vision Language Model (VLM) pipeline for generating multilingual Visual Question Answering (VQA) datasets from images using state-of-the-art Vision Language Models.
